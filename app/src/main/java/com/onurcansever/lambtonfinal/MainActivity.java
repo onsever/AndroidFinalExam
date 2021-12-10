@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 chosenCountry = countries.get(i);
                 poiListView.setAdapter(new PoiAdapter(MainActivity.this, chosenCountry));
                 resetLayout();
+                chosenPlace = null;
             }
 
             @Override
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 chosenPlace = chosenCountry.getPlaces()[i];
+                resetLayout();
             }
         });
     }
@@ -175,6 +177,5 @@ public class MainActivity extends AppCompatActivity {
         totalText.setText(String.format("%s$", total));
         numberOfVisitorsBar.setProgress(1);
         numberOfVisitorsText.setText(String.valueOf(numberOfVisitorsBar.getProgress()));
-        chosenPlace = null;
     }
 }

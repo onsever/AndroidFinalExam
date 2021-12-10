@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     int numberOfVisitors = Integer.parseInt(numberOfVisitorsText.getText().toString());
                     double visitingPrice = chosenPlace.getVisitPrice();
 
-                    if (numberOfVisitors < 15) total = numberOfVisitors * visitingPrice;
+                    if (numberOfVisitors <= 15) total = numberOfVisitors * visitingPrice;
                     else total = (numberOfVisitors * visitingPrice) - ((numberOfVisitors * visitingPrice) * 0.05);
 
                     totalText.setText(String.format("%s$", total));
